@@ -1,0 +1,16 @@
+--- 
+- name: Install/start httpd
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: install httpd
+      package:
+        name: "{{apache_package}}"
+        state: absent
+
+  # - name: start/enable httpd
+  #   service:
+  #     name: "{{apache_service}}"
+  #     state: started
+  #     enabled: yes
