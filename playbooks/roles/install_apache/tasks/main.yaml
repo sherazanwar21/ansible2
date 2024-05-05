@@ -1,0 +1,6 @@
+---
+- name: Install Apache
+  package:
+    name: "{{apache_package}}"
+    state: present
+  notify: Start Apache
