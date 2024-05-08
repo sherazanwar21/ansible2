@@ -1,0 +1,12 @@
+---
+- name: start apache
+  service:
+    name: "{{apache_service2}}"
+    state: started
+    enabled: yes
+
+- name: restart apache
+  service:
+    name: "{{apache_service2}}"
+    state: restarted
+

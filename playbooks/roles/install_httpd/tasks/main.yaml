@@ -1,0 +1,13 @@
+---
+- name: install apache
+  package:
+    name: "{{apache_package2}}"
+    state: present
+  notify: start apache
+
+- name: copy index.html template
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  notify: restart apache
+
